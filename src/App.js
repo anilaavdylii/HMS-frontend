@@ -4,7 +4,10 @@ import * as ReactBootStrap from "react-bootstrap";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
-
+import FindPath
+ from './Components/FindPath';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import NavBar from "./Components/Navbar"
 import {
   BrowserRouter as Router,
@@ -35,9 +38,14 @@ function App() {
           <Route path="/register" component={Register}>
             <Register />
           </Route>
+
+          <Route path="/findPath" component={FindPath}>
+            <FindPath />
+          </Route>
          
         </Switch>
     </Router>
+    <ToastContainer position="top-right" autoClose={5000} />
     </div>
   );
 }

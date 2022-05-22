@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { BsPhone } from "react-icons/bs"
 import emailjs from '@emailjs/browser';
 import styled from "styled-components";
-
+import {toast} from 'react-toastify';
 
 function Footer() {
     const form = useRef();
@@ -23,9 +23,11 @@ function Footer() {
           (result) => {
             console.log(result.text);
             console.log("message sent");
+            toast.success('Message sent!')
           },
           (error) => {
             console.log(error.text);
+            toast.error('Message not sent!')
           }
         );
     };
@@ -36,12 +38,12 @@ function Footer() {
         <div className="row">
 
             <hr className="clearfix w-100 d-md-none pb-0"/>
-
-            <div className="col-md-5 text-center py-3">
+           
+            <div className="col-md-5 text-center py-3" >
                 <ul className="list-unstyled">
                
                 <h6><GrLocation/>Lagjja Spitalit, Prishtine 10000, Kosove</h6>
-                <a className="btn btn-outline-primary btn-xs" href="/register">Gjej rrugen</a>
+                <a className="btn btn-outline-primary btn-xs" href="/findPath">Gjej rrugen</a>
                 </ul>
 
                 <ul className="list-unstyled">
@@ -55,6 +57,7 @@ function Footer() {
 
             <div className="col-md-3 mb-md-0 mb-3">
             <StyledContactForm>
+                <h5>Kontakti</h5>
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="user_name" />
@@ -66,6 +69,7 @@ function Footer() {
       </form>
     </StyledContactForm>
             </div>
+            
         </div>
     </div>
 
@@ -120,7 +124,7 @@ const StyledContactForm = styled.div`
     input[type="submit"] {
       margin-top: 2rem;
       cursor: pointer;
-      background: #52B2BF;
+      background: dodgerblue;
       color: white;
       border: none;
     }

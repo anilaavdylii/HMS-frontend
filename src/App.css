@@ -107,6 +107,7 @@ p {
 .intro-lead-in{
   color: rgb(51, 122, 183);
   font-size: 30px;
+  letter-spacing: 3px;
   
 }
 
@@ -240,4 +241,13 @@ p {
 .page-footer{
   background-color: #F8F9FA;
  
+}
+
+.container-footer{
+  top:20%;
+}
+
+.map-container{
+  width:100%;
+  height: 100vh;
 }
