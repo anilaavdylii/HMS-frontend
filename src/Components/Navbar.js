@@ -9,7 +9,7 @@ const NavBar = () => {
     return(
         <div className="App">
     <ReactBootStrap.Navbar collapseOnSelect bg="light" expand="lg">
-  <ReactBootStrap.Navbar.Brand href="#home">Qendra Klinike Universitare e Kosoves</ReactBootStrap.Navbar.Brand>
+  <ReactBootStrap.Navbar.Brand href="/home">Qendra Klinike Universitare e Kosoves</ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto">       
@@ -17,7 +17,7 @@ const NavBar = () => {
     <ReactBootStrap.Nav>
 
       <Link to="/home">
-    <ReactBootStrap.Nav.Link href="#home">Home</ReactBootStrap.Nav.Link>
+    <ReactBootStrap.Nav.Link href="#home">Faqja Kryesore</ReactBootStrap.Nav.Link>
     </Link>
 
     <Link to="/login">
