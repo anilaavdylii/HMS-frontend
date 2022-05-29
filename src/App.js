@@ -4,8 +4,8 @@ import * as ReactBootStrap from "react-bootstrap";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
-import FindPath
- from './Components/FindPath';
+import FindPath from './Components/FindPath';
+import AboutUs from './Components/AboutUs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBar from "./Components/Navbar"
@@ -41,6 +41,10 @@ function App() {
 
           <Route path="/findPath" component={FindPath}>
             <FindPath />
+          </Route>
+
+          <Route path="/aboutUs" component={AboutUs}>
+            <AboutUs />
           </Route>
          
         </Switch>

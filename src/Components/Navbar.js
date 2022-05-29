@@ -20,6 +20,11 @@ const NavBar = () => {
     <ReactBootStrap.Nav.Link href="#home">Faqja Kryesore</ReactBootStrap.Nav.Link>
     </Link>
 
+    <Link to="/aboutUs">
+    <ReactBootStrap.Nav.Link href="#aboutUs">Rreth Nesh</ReactBootStrap.Nav.Link>
+    </Link>
+
+
     <Link to="/login">
     <ReactBootStrap.Nav.Link href="#login">Kycu</ReactBootStrap.Nav.Link>
     </Link>

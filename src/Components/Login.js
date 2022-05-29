@@ -66,7 +66,7 @@ function Login() {
                       value={formValues.email}
                       onChange={handleChange}
                     />
-                     <p>{formErrors.email}</p>
+                     <h6>{formErrors.email}</h6>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -76,7 +76,7 @@ function Login() {
                       value={formValues.password}
                       onChange={handleChange}
                     />
-                     <p>{formErrors.password}</p>
+                     <h6>{formErrors.password}</h6>
                   </Form.Group>
                   <br/>
                   <a href="#/" className='forgot-pw'>
