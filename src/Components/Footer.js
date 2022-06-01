@@ -8,7 +8,6 @@ import {toast} from 'react-toastify';
 
 function Footer() {
     const form = useRef();
-
     const sendEmail = (e) => {
       e.preventDefault();
   
@@ -33,57 +32,44 @@ function Footer() {
     };
 
   return (
-    <footer className="page-footer font-small blue pt-4">
+  <footer className="page-footer font-small blue pt-4">
     <div className="container-fluid text-center text-md-left">
         <div className="row">
-
             <hr className="clearfix w-100 d-md-none pb-0"/>
-           
             <div className="col-md-5 text-center py-3" >
                 <ul className="list-unstyled">
-               
-                <h6><GrLocation/>Lagjja Spitalit, Prishtine 10000, Kosove</h6>
-                <a className="btn btn-outline-primary btn-xs" href="/findPath">Gjej rrugen</a>
+                  <h6><MdEmail/>drejtoria.shskuk@rks-gov.net</h6>
                 </ul>
-
                 <ul className="list-unstyled">
-                <h6><MdEmail/>drejtoria.shskuk@rks-gov.net</h6>
+                  <h6><BsPhone/>+381 38 500 600</h6>
                 </ul>
-
                 <ul className="list-unstyled">
-                <h6><BsPhone/>+381 38 500 600</h6>
+                  <h6><GrLocation/>Lagjja Spitalit, Prishtine 10000, Kosove</h6>
+                  <a className="btn btn-outline-primary btn-xs" href="/findPath">Gjej rrugen</a>
                 </ul>
             </div>
-
             <div className="col-md-3 mb-md-0 mb-3">
             <StyledContactForm>
-                <h5>Kontakti</h5>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
-      </form>
-    </StyledContactForm>
+              <h5>KONTAKTI</h5>
+              <form ref={form} onSubmit={sendEmail}>
+                  <label>Name</label>
+                  <input type="text" name="user_name" />
+                  <label>Email</label>
+                  <input type="email" name="user_email" />
+                  <label>Message</label>
+                  <textarea name="message" />
+                  <input type="submit" value="Send" />
+              </form>
+            </StyledContactForm>
             </div>
-            
         </div>
     </div>
-
-    <div className="footer-copyright text-center py-3">© 2020 Copyright: QKUK
-    
-    </div>
-
+    <div className="footer-copyright text-center py-3">© 2020 Copyright: QKUK</div>
 </footer>
 
   )
 }
-
 export default Footer
-
 
 const StyledContactForm = styled.div`
   width: 400px;
