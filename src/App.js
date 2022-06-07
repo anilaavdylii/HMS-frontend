@@ -6,6 +6,8 @@ import Register from "./Components/Register";
 import Home from "./Components/Home";
 import FindPath from './Components/FindPath';
 import AboutUs from './Components/AboutUs';
+import Posts from './Components/Posts';
+import Doctors from './Components/Doctors';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBar from "./Components/Navbar"
@@ -46,7 +48,14 @@ function App() {
           <Route path="/aboutUs" component={AboutUs}>
             <AboutUs />
           </Route>
+
+          <Route path="/posts" component={Posts}>
+            <Posts />
+          </Route>
          
+          <Route path="/doctors" component={Doctors}>
+            <Doctors />
+          </Route>
         </Switch>
     </Router>
     <ToastContainer position="top-right" autoClose={5000} />
