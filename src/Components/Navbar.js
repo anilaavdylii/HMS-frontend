@@ -4,12 +4,13 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
+import { FaHospital } from "react-icons/fa";
 
 const NavBar = () => {
     return(
         <div className="App">
     <ReactBootStrap.Navbar collapseOnSelect bg="light" expand="lg">
-  <ReactBootStrap.Navbar.Brand href="/home">Qendra Klinike Universitare e Kosoves</ReactBootStrap.Navbar.Brand>
+  <ReactBootStrap.Navbar.Brand href="/home">Qendra Klinike Universitare e Kosoves  <FaHospital/></ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto">       

@@ -3,6 +3,7 @@ import Footer from '../Components/Footer';
 import PostCard from './PostCard';
 import image1 from '../img/disease1.jpg'; 
 
+
 function Home() {
   return (
     <>
