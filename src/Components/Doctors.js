@@ -17,19 +17,19 @@ function Doctors() {
             <DoctorCard
               src={doc1}
               name='Filan Fisteku'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  '
+              specialism=' Dermatology '
               // path='/'
             />
              <DoctorCard
               src={doc2}
               name='Filan Fisteku'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  '
-              // path='/'
+              specialism=' Emergency medicine '
+                // path='/'
             />
              <DoctorCard
               src={doc1}
               name='Filan Fisteku'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  '
+              specialism=' Allergy and immunology '
               // path='/'
             />           
           </ul>

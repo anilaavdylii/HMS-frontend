@@ -14,7 +14,7 @@ function Posts() {
       <div class="col-md-8">
            
            <div class="input-group mb-3">
-  <input type="text" class="form-control input-text" placeholder="Search products...." aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+  <input type="text" class="form-control input-text" placeholder="Kerko nje semundje" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
   <div class="input-group-append">
     <button class="btn btn-outline-warning btn-lg" type="button"><p><BiSearchAlt/></p></button>
   </div>

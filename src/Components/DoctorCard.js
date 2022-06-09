@@ -14,13 +14,13 @@ function PostCard(props) {
             />
           </figure>
           <div className='cards__item__info2'>
-            <p className='cards__item__text2'>{props.text}</p>
+            <p className='cards__item__text2'>{props.specialism}</p>
           </div>
 
           <div className='cards__item__button2'>
           <a className="btn btn-outline-info btn-xl text-uppercase js-scroll-trigger"
-        //    href="/"
-          >Lexo me shume</a>
+           href="/addAppointment"
+          >Cakto nje termin</a>
           </div>
 
         </div>
