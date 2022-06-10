@@ -78,7 +78,7 @@ function Register() {
                         value={formValues.name}
                         onChange={handleChange}
                     />
-                    <p>{formErrors.name}</p>
+                    <h6>{formErrors.name}</h6>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicSurname">
@@ -90,7 +90,7 @@ function Register() {
                         onChange={handleChange}
                 
                     />
-                    <p>{formErrors.surname}</p>
+                    <h6>{formErrors.surname}</h6>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -101,7 +101,7 @@ function Register() {
                       value={formValues.email}
                       onChange={handleChange}
                     />
-                    <p>{formErrors.email}</p>
+                    <h6>{formErrors.email}</h6>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -112,7 +112,7 @@ function Register() {
                           value={formValues.password}
                           onChange={handleChange}
                     />
-                    <p>{formErrors.password}</p>
+                    <h6>{formErrors.password}</h6>
                   </Form.Group>
     
                  <Button variant="primary" type="submit" className='button'>

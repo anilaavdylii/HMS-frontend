@@ -54,7 +54,7 @@ function Login() {
                   
                 <Form style={{margin:"30px"}} onSubmit={handleSubmit}> 
 
-                  <Button variant="outline-primary" 
+                  <Button variant="outline-info" 
                   size="md"> <img width="20" height="20"
                   src="https://icon-library.com/images/google-g-icon/google-g-icon-12.jpg" 
                 /> Kycu me Google</Button>

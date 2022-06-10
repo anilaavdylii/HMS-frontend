@@ -38,14 +38,14 @@ function Footer() {
             <hr className="clearfix w-100 d-md-none pb-0"/>
             <div className="col-md-5 text-center py-3" >
                 <ul className="list-unstyled">
-                  <h6><MdEmail/>drejtoria.shskuk@rks-gov.net</h6>
+                  <p><MdEmail/>drejtoria.shskuk@rks-gov.net</p>
                 </ul>
                 <ul className="list-unstyled">
-                  <h6><BsPhone/>+381 38 800 523</h6>
+                  <p><BsPhone/>+381 38 500 600</p>
                 </ul>
                 <ul className="list-unstyled">
-                  <h6><GrLocation/>Lagjja Spitalit, Prishtine 10000, Kosove</h6>
-                  <a className="btn btn-outline-primary btn-xs" href="/findPath">Gjej rrugen</a>
+                  <p><GrLocation/>Lagjja Spitalit, Prishtine 10000, Kosove</p>
+                  <a className="btn btn btn btn-outline-info btn-xs" href="/findPath">Gjej rrugen</a>
                 </ul>
             </div>
             <div className="col-md-3 mb-md-0 mb-3">

@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from "react-bootstrap/Button";
 
 function PostCard(props) {
   return (
@@ -19,7 +18,7 @@ function PostCard(props) {
           </div>
 
           <div className='cards__item__button'>
-          <a className="btn btn-outline-primary btn-xl text-uppercase js-scroll-trigger"
+          <a className="btn btn-outline-info btn-xl text-uppercase js-scroll-trigger"
         //    href="/"
           >Lexo me shume</a>
           </div>

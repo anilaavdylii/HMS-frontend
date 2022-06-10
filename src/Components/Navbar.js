@@ -4,12 +4,13 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
+import { FaHospital } from "react-icons/fa";
 
 const NavBar = () => {
     return(
         <div className="App">
     <ReactBootStrap.Navbar collapseOnSelect bg="light" expand="lg">
-  <ReactBootStrap.Navbar.Brand href="/home">Qendra Klinike Universitare e Kosoves</ReactBootStrap.Navbar.Brand>
+  <ReactBootStrap.Navbar.Brand href="/home">Qendra Klinike Universitare e Kosoves  <FaHospital/></ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto">       
@@ -19,6 +20,11 @@ const NavBar = () => {
       <Link to="/home">
     <ReactBootStrap.Nav.Link href="#home">Faqja Kryesore</ReactBootStrap.Nav.Link>
     </Link>
+
+    <Link to="/posts">
+    <ReactBootStrap.Nav.Link href="#posts">Lexo rreth Semundjeve</ReactBootStrap.Nav.Link>
+    </Link>
+
 
     <Link to="/aboutUs">
     <ReactBootStrap.Nav.Link href="#aboutUs">Rreth Nesh</ReactBootStrap.Nav.Link>
