@@ -8,7 +8,7 @@ function Home() {
     <header className="masthead">
     <div className="container">
       <div className="intro-text">
-        <div className="intro-lead-in">Ne kujdesemi per shendetin tuaj!</div>
+        <div className="intro-lead-in">Ne kujdesemi per  ju!</div>
         <a className="btn btn-outline-primary btn-xl text-uppercase js-scroll-trigger" href="/register">Krijo llogari</a>
       </div>
     </div>

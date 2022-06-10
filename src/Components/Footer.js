@@ -41,7 +41,7 @@ function Footer() {
                   <h6><MdEmail/>drejtoria.shskuk@rks-gov.net</h6>
                 </ul>
                 <ul className="list-unstyled">
-                  <h6><BsPhone/>+381 38 500 600</h6>
+                  <h6><BsPhone/>+381 38 800 523</h6>
                 </ul>
                 <ul className="list-unstyled">
                   <h6><GrLocation/>Lagjja Spitalit, Prishtine 10000, Kosove</h6>
@@ -52,11 +52,11 @@ function Footer() {
             <StyledContactForm>
               <h5>KONTAKTI</h5>
               <form ref={form} onSubmit={sendEmail}>
-                  <label>Name</label>
+                  <label>Emri</label>
                   <input type="text" name="user_name" />
                   <label>Email</label>
                   <input type="email" name="user_email" />
-                  <label>Message</label>
+                  <label>Mesazhi</label>
                   <textarea name="message" />
                   <input type="submit" value="Send" />
               </form>
