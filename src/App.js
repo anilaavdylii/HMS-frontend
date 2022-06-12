@@ -1,46 +1,39 @@
 import React from 'react';
 import './App.css';
-import * as ReactBootStrap from "react-bootstrap";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import Home from "./Components/Home";
-import FindPath from './Components/FindPath';
-import AboutUs from './Components/AboutUs';
-import Posts from './Components/Posts';
-import Doctors from './Components/Doctors';
-import AddAppointment from './Components/AddAppointment'
-import { ToastContainer, toast } from 'react-toastify';
+import * as ReactBootStrap from 'react-bootstrap';
+import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import FindPath from './components/FindPath';
+import AboutUs from './components/AboutUs';
+import Posts from './components/Posts';
+import Doctors from './components/Doctors';
+import AddAppointment from './components/AddAppointment';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import NavBar from "./Components/Navbar"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
+import NavBar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import RouteGuard from './components/RouteGuard';
+import { useAuthInit } from './hooks/useAuthInit';
 
 function App() {
+  useAuthInit();
+
   return (
     <div className="App">
-        <Router>
+      <Router>
         <NavBar />
- 
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-        <Route path="/home" component={Home}>
-              <Home />
-          </Route>
+          <Route exact path="/" component={Home} />
 
-          <Route path="/login" component={Login}>
-              <Login />
-          </Route>
+          <RouteGuard path="/admin" component={Login} />
 
-          <Route path="/register" component={Register}>
-            <Register />
-          </Route>
+          <Route path="/login" component={Login} />
+
+          <Route path="/register" component={Register} />
 
           <Route path="/findPath" component={FindPath}>
             <FindPath />
@@ -53,7 +46,7 @@ function App() {
           <Route path="/posts" component={Posts}>
             <Posts />
           </Route>
-         
+
           <Route path="/doctors" component={Doctors}>
             <Doctors />
           </Route>
@@ -65,10 +58,9 @@ function App() {
           {/* <Route component={PageNotFound}>
             <PageNotFound />
           </Route> */}
-        
         </Switch>
-    </Router>
-    <ToastContainer position="top-right" autoClose={5000} />
+      </Router>
+      <ToastContainer position="top-right" autoClose={5000} />
     </div>
   );
 }
