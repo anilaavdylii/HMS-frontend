@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DoctorCard(props) {
+function PostCard(props) {
   return (
     <>
       <li className='cards__item2'>
@@ -29,4 +29,4 @@ function DoctorCard(props) {
   )
 }
 
-export default DoctorCard
+export default PostCard
