@@ -1,68 +1,62 @@
-import React from 'react';
-import './App.css';
-import * as ReactBootStrap from 'react-bootstrap';
-import Login from './components/Login';
-import Register from './components/Register';
-import Home from './components/Home';
-import FindPath from './components/FindPath';
-import AboutUs from './components/AboutUs';
-import Posts from './components/Posts';
-import Doctors from './components/Doctors';
-import AddAppointment from './components/AddAppointment';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import NavBar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import RouteGuard from './components/RouteGuard';
-import { useAuthInit } from './hooks/useAuthInit';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./pages/general/About";
+import AdminAccountDetails from "./pages/admin/AdminAccountDetails";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminDoctors from "./pages/admin/AdminDoctors";
+import AdminPatients from "./pages/admin/AdminPatients";
+import AdminPosts from "./pages/admin/AdminPosts";
+import AdminSchedules from "./pages/admin/AdminSchedules";
+import DoctorAccountDetails from "./pages/doctor/DoctorAccountDetails";
+import DoctorAppointments from "./pages/doctor/DoctorAppointments";
+import DoctorPatients from "./pages/doctor/DoctorPatients";
+import DoctorPatientDetails from "./pages/doctor/DoctorPatientDetails";
+import DoctorPosts from "./pages/doctor/DoctorPosts";
+import Footer from "./components/Footer";
+import Home from "./pages/general/Home";
+import Login from "./pages/general/Login";
+import Menu from "./pages/Menu";
+import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
+import PatientAppointment from "./pages/patient/PatientAppointment";
+import PatientDiagnosis from "./pages/patient/PatientDiagnosis";
+import PatientDisease from "./pages/patient/PatientDisease";
+import PatientDiseaseDetails from "./pages/patient/PatientDiseaseDetails";
+import PatientDoctors from "./pages/patient/PatientDoctors";
+import PatientDoctorDetails from "./pages/patient/PatientDoctorDetails";
+import PatientProfile from "./pages/patient/PatientProfile";
+import Register from "./pages/general/Register";
 
 function App() {
-  useAuthInit();
+	return (
+		<div className="App">
+			<Router>
+				<Navbar />
+				<Routes>
+					{/* Menu */}
+					<Route path="/Menu" element={<Menu />} />
 
-  return (
-    <div className="App">
-      <Router>
-        <NavBar />
+					{/* General */}
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route exact path="/" component={Home} />
-
-          <RouteGuard path="/admin" component={Login} />
-
-          <Route path="/login" component={Login} />
-
-          <Route path="/register" component={Register} />
-
-          <Route path="/findPath" component={FindPath}>
-            <FindPath />
-          </Route>
-
-          <Route path="/aboutUs" component={AboutUs}>
-            <AboutUs />
-          </Route>
-
-          <Route path="/posts" component={Posts}>
-            <Posts />
-          </Route>
-
-          <Route path="/doctors" component={Doctors}>
-            <Doctors />
-          </Route>
-
-          <Route path="/addAppointment" component={AddAppointment}>
-            <AddAppointment />
-          </Route>
-
-          {/* <Route component={PageNotFound}>
-            <PageNotFound />
-          </Route> */}
-        </Switch>
-      </Router>
-      <ToastContainer position="top-right" autoClose={5000} />
-    </div>
-  );
+					{/* Patient */}
+					<Route path="/patient-appointment" element={<PatientAppointment />} />
+					<Route path="/patient-diagnosis" element={<PatientDiagnosis />} />
+					<Route path="/patient-disease" element={<PatientDisease />} />
+					<Route path="/patient-disease-details" element={<PatientDiseaseDetails />} />
+					<Route path="/patient-doctors" element={<PatientDoctors />} />
+					<Route path="/patient-doctors-details" element={<PatientDoctorDetails />} />
+					<Route path="/patient-profile" element={<PatientProfile />} />
+					{/* 404 Page */}
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+				<Footer />
+			</Router>
+		</div>
+	);
 }
 
 export default App;
