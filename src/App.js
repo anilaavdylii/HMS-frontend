@@ -50,6 +50,22 @@ function App() {
 					<Route path="/patient-doctors" element={<PatientDoctors />} />
 					<Route path="/patient-doctors-details" element={<PatientDoctorDetails />} />
 					<Route path="/patient-profile" element={<PatientProfile />} />
+
+					{/* Doctor */}
+					<Route path="/doctor-appointments" element={<DoctorAppointments />} />
+					<Route path="/doctor-account-details" element={<DoctorAccountDetails />} />
+					<Route path="/doctor-posts" element={<DoctorPosts />} />
+					<Route path="/doctor-patients" element={<DoctorPatients />} />
+					<Route path="/doctor-patient-details" element={<DoctorPatientDetails />} />
+
+					{/* Admin */}
+					<Route path="/admin-dashboard" element={<AdminDashboard />} />
+					<Route path="/admin-account-details" element={<AdminAccountDetails />} />
+					<Route path="/admin-patients" element={<AdminPatients />} />
+					<Route path="/admin-doctors" element={<AdminDoctors />} />
+					<Route path="/admin-schedules" element={<AdminSchedules />} />
+					<Route path="/admin-posts" element={<AdminPosts />} />
+
 					{/* 404 Page */}
 					<Route path="*" element={<NotFound />} />
 				</Routes>
