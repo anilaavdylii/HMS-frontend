@@ -33,16 +33,16 @@ function App() {
 			<Router>
 				<Navbar />
 				<Routes>
-					{/* Menu */}
+	
 					<Route path="/Menu" element={<Menu />} />
 
-					{/* General */}
+			
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
 
-					{/* Patient */}
+				
 					<Route path="/patient-appointment" element={<PatientAppointment />} />
 					<Route path="/patient-diagnosis" element={<PatientDiagnosis />} />
 					<Route path="/patient-disease" element={<PatientDisease />} />
@@ -51,14 +51,14 @@ function App() {
 					<Route path="/patient-doctors-details" element={<PatientDoctorDetails />} />
 					<Route path="/patient-profile" element={<PatientProfile />} />
 
-					{/* Doctor */}
+	
 					<Route path="/doctor-appointments" element={<DoctorAppointments />} />
 					<Route path="/doctor-account-details" element={<DoctorAccountDetails />} />
 					<Route path="/doctor-posts" element={<DoctorPosts />} />
 					<Route path="/doctor-patients" element={<DoctorPatients />} />
 					<Route path="/doctor-patient-details" element={<DoctorPatientDetails />} />
 
-					{/* Admin */}
+	
 					<Route path="/admin-dashboard" element={<AdminDashboard />} />
 					<Route path="/admin-account-details" element={<AdminAccountDetails />} />
 					<Route path="/admin-patients" element={<AdminPatients />} />
@@ -66,7 +66,6 @@ function App() {
 					<Route path="/admin-schedules" element={<AdminSchedules />} />
 					<Route path="/admin-posts" element={<AdminPosts />} />
 
-					{/* 404 Page */}
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 				<Footer />

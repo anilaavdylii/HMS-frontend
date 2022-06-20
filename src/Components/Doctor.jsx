@@ -9,7 +9,7 @@ export default function Doctor() {
 				</div>
 				<div className="col">
 					<div className="doctorName">Silva A.D.M.P</div>
-					<div className="doctorTitle">MBBS,MD,IDCCM</div>
+					<div className="doctorTitle">MD,IDCCM</div>
 					<button className="btn btn-secondary btn-sm">Read more and rate</button>
 				</div>
 			</div>

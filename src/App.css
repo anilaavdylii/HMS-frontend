@@ -276,38 +276,6 @@ h6 {
 
 
 
-.searchInput__container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width:40%;  
-}
-
-.searchInput__container input{
-  width: 50%;
-  padding: 10px;
-  outline: none;
-}
-
-
-.btn:hover{
-  color:#fff;
-}
-
-.input-text:focus{
-  box-shadow: 0px 0px 0px;
-  border-color:#f8c146;
-  outline: 0px;
-}
-
-.form-control {
-  border: 1px solid #f8c146;
-}
-
-
-
-
 
 .cards__items2 {
   margin-bottom: 24px;

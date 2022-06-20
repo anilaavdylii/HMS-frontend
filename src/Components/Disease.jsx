@@ -10,9 +10,10 @@ export default function Disease() {
 						<div className="card-body">
 							<h5 className="card-title text-center fw-bold">Disease 1</h5>
 							<p className="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							</p>
 						</div>
+
 						<div className="text-center mb-3">
 							<button>Read more</button>
 						</div>

@@ -17,7 +17,6 @@ export const useAuthInit = () => {
   useEffect(() => {
     const isValid = jwtVerify(localStorage.getItem('auth.token') || '');
     setIsAuthenticated(isValid);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
