@@ -23,13 +23,6 @@ export default function Footer() {
 							<div>Thursday</div>
 							<div>Friday</div>
 						</div>
-						<div className="col">
-							<div>9:00-18:00</div>
-							<div>9:00-18:00</div>
-							<div>9:00-18:00</div>
-							<div>9:00-18:00</div>
-							<div>9:00-18:00</div>
-						</div>
 					</div>
 				</div>
 				<div className="col-3">
