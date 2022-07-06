@@ -9,11 +9,12 @@ export default function DoctorPatientDetails() {
 				<div className="col-4">
 					<img src="assets/doctor/patient-details.png" alt="" />
 				</div>
+
 				<div className="col">
 					<div className="patientName fw-bold">Name - Surname</div>
-					<div className="patientGender">Female</div>
-					<div className="patientAge">27 years</div>
-					<div className="patientDetails">address + other details</div>
+					<div className="patientGender">Male</div>
+					<div className="patientAge">34 years</div>
+					<div className="patientDetails">address</div>
 				</div>
 			</div>
 
