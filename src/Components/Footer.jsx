@@ -36,7 +36,7 @@ export default function Footer({ role }) {
 					<div>
 						<i className="bi bi-geo-alt-fill"></i> Lagjia Spitalit, Prishtine 1000, Kosove
 					</div>
-					<Link to="/about">
+					<Link to="/map">
 						<button className="button">Gjej rrugen</button>
 					</Link>
 				</div>

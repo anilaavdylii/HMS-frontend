@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import About from "./pages/general/About";
+import Map from "./pages/general/MapHos";
 import AccountDetails from "./pages/general/AccountDetails";
 import AdminAppointments from "./pages/admin/AdminAppointments";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -34,7 +35,7 @@ function App() {
 	const decoded = token && jwt_decode(token);
 	const [user, setUser] = decoded ? useState(decoded.sub) : "";
 	const role = decoded ? decoded.ROLE.toString() : "";
-	// const [posts, setPosts] = useState([]);
+	const [posts, setPosts] = useState([]);
 	const [doctors, setDoctors] = useState([]);
 	const [patients, setPatients] = useState([]);
 	const [profiles, setProfiles] = useState([]);
@@ -58,15 +59,15 @@ function App() {
 		}, []);
 
 	// Get posts
-	// posts &&
-	// 	useEffect(() => {
-	// 		const fetchPosts = async () => {
-	// 			axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-	// 			const res = await axiosInstance.get("/posts");
-	// 			setPosts(res.data);
-	// 		};
-	// 		fetchPosts();
-	// 	}, []);
+	posts &&
+		useEffect(() => {
+			const fetchPosts = async () => {
+				axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+				const res = await axiosInstance.get("/posts");
+				setPosts(res.data);
+			};
+			fetchPosts();
+		}, []);
 
 	// Get all doctors
 	token &&
@@ -103,6 +104,7 @@ function App() {
 					<Route path="/article-details=:id" element={user ? <ArticleDetails token={token} posts={posts} /> : <Navigate to="/login" />} />
 					<Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
 					<Route path="/register" element={user ? <Navigate to="/" /> : <Register />} />
+					<Route path="/map" element={<Map />} />
 
 					{/* Patient */}
 					<Route path="/patient-appointment" element={role === "ROLE_PATIENT" ? <PatientAppointment doctors={doctors} /> : <Navigate to="/" />} />
