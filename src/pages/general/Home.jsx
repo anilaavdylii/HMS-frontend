@@ -1,15 +1,50 @@
-import React from "react";
-import Disease from "../../components/Disease";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { axiosInstance } from "../../config";
+import Article from "../../components/Article";
 
-export default function Home() {
+export default function Home({ posts }) {
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [phoneNumber, setPhoneNumber] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
+	const [error, setError] = useState("");
+	const [success, setSuccess] = useState("");
+
+	async function handleSubmit(e) {
+		e.preventDefault();
+		setError("");
+		setSuccess("");
+
+		try {
+			const res = await axiosInstance.post("/users/contact", {
+				firstName,
+				lastName,
+				phoneNumber,
+				email,
+				message,
+			});
+			res && setSuccess("Your message has been sent successfully!");
+			console.log(res);
+		} catch (err) {
+			if (err.response) {
+				setError("You failed to submit the form!");
+				console.log(err.response);
+			}
+		}
+	}
+
 	return (
-		<div className="home">
-			<div className="homeHeader position-relative">
-				<img src="assets/general/heroimage.png" alt="" className="img-fluid" />
+		<div className="home top">
+			<div className="homeHeader text-center">
+				<div className="text-center">
+					<img src="assets/general/heroImg.jpg" alt="" className="imgHero" />
+				</div>
 				<div className="homeHeaderText position-absolute text-center">
 					<h1>We take care of your health!</h1>
-					<button className="me-4">Login</button>
-					<button>Register</button>
+					<h5>"He who has health, has hope; and he who has hope, has everything."</h5>
+					<h5>- Thomas Carlyle</h5>
 				</div>
 			</div>
 
@@ -26,30 +61,46 @@ export default function Home() {
 								minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 							</p>
 							<p>Duis aute irure dolor in reprehenderit in voluptate Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-							<button className="mt-3">Read more</button>
+							<Link to="/about">
+								<button className="mt-3">Read more</button>
+							</Link>
 						</div>
 					</div>
 				</div>
 
-				<div className="homeDisease mb-5">
-					<h1>Read About Disease</h1>
+				<div className="homeArticle mb-5">
+					<h1>Read Our Articles</h1>
 					<div className="d-flex gap-5">
-						<Disease />
-						<Disease />
-						<Disease />
+						<Article posts={posts} />
 					</div>
 				</div>
 
 				<div className="contact text-center">
-					<h2>Contact</h2>
-					<form>
-						<input type="text" placeholder="Name" />
-						<input type="text" placeholder="Surname" />
-						<input type="text" placeholder="Contact number" />
-						<input type="email" placeholder="Email" />
-						<textarea rows="10" placeholder="Message" className="mt-4"></textarea>
+					<h1 className="mb-5">Contact</h1>
+					<form onSubmit={handleSubmit}>
+						<input
+							type="text"
+							placeholder="First Name"
+							className="inputHome"
+							required
+							value={firstName}
+							onChange={(e) => setFirstName(e.target.value)}
+						/>
+						<input type="text" placeholder="Last Name" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
+						<input
+							type="text"
+							placeholder="Mobile Number"
+							className="inputHome"
+							required
+							value={phoneNumber}
+							onChange={(e) => setPhoneNumber(e.target.value)}
+						/>
+						<input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+						<textarea rows="10" placeholder="Message" className="mt-4" required value={message} onChange={(e) => setMessage(e.target.value)} />
 						<br />
 						<button className="my-4">Send</button>
+						<div className="error">{error}</div>
+						<div className="success">{success}</div>
 					</form>
 				</div>
 			</div>
