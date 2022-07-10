@@ -86,7 +86,36 @@ export default function DoctorPatientDetails({ token }) {
 				)}
 			</div>
 
+			<div className="patientDiagnosis">
+				<h2>Diagnosis</h2>
+				<div className="d-flex justify-content-between">
+					<Diagnosis diagnose={diagnose} />
+				</div>
+				<div className="text-center mb-5">
+					<button className="mt-3" onClick={() => setIsAdd(true)}>
+						Add a diagnosis
+					</button>
+					<div className="error">{error}</div>
+					<div className="success">{success}</div>
+				</div>
+
+				{isAdd && (
+					<form onSubmit={handleSubmit} className="text-center">
+						<label className="form-label">Write new diagnosis for this patient :</label>
+						<div className="d-flex justify-content-center">
+							<textarea
+								rows="4"
+								placeholder="New diagnosis..."
+								className="form-control my-3 w-50"
+								required
+								value={newDiagnose}
+								onChange={(e) => setNewDiagnose(e.target.value)}
+							/>
+						</div>
+						<button>Post New Diagnosis</button>
+					</form>
+				)}
 			</div>
-	
+		</div>
 	);
 }
