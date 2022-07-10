@@ -1,26 +1,54 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Sidebar from "../../components/Sidebar";
+import {axiosInstance} from "../../config";
 
-export default function AdminSchedules() {
+export default function AdminSchedules({token, doctors}) {
+	const [doctorId, setDoctorId] = useState("");
+	const [schedules, setSchedules] = useState([]);
+
+	useEffect(() => {
+		const fetchSchedules = async () => {
+			axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+			const res = await axiosInstance.get(`/users/schedule/${doctorId}`);
+			setSchedules(res.data);
+		};
+		fetchSchedules();
+	}, [doctorId]);
+
+	console.log(schedules);
+
 	return (
-		<div className="adminSchedules top container">
+		<div className="AdminDoctors top container-fluid">
 			<div className="row">
-				<div className="col-2 adminSchedulesLeft">
+				<div className="col-2 ps-0">
 					<Sidebar />
 				</div>
-
-				<div className="col adminSchedulesRight">
-					<div className="row p-4 mx-5 bg-secondary bg-opacity-25">
-						<div className="col-5 text-center">
-							<div className="bg-light scheduleBgPhoto d-flex justify-content-center align-items-center">
-								<img src="assets/admin/admin-doctor.png" alt="" />
-							</div>
-							<h5>Name - Surname</h5>
-							<div>Male</div>
-							<div>27 years</div>
-							<div>Adress + other details</div>
-						</div>
-						<div className="col">Nothing!</div>
+				<div className="col text-center">
+					<h1>Doctor Schedule</h1>
+					<label>
+						<b>Select the doctor</b> :
+					</label>
+					<div className="d-flex justify-content-center mt-2">
+						<select className="form-control w-25" required value={doctorId} onChange={e => setDoctorId(e.target.value)}>
+							<option defaultValue>Select doctor</option>
+							{doctors.content ? (
+								doctors.content.map(doctor => (
+									<option value={doctor.id} key={doctor.id}>
+										{doctor.firstName} {doctor.lastName}
+									</option>
+								))
+							) : (
+								<option>Loading the data...</option>
+							)}
+						</select>
+					</div>
+					<div>
+						{schedules &&
+							schedules.map((schedule, i) => (
+								<div key={i} className="mb-3">
+									<b>{schedule.weekDay}</b>: {schedule.paradite && !schedule.pushim && "Morning "} {schedule.pasdite && schedule.pushim && "Evening "} {schedule.pushim && "Not available "}
+								</div>
+							))}
 					</div>
 				</div>
 			</div>
