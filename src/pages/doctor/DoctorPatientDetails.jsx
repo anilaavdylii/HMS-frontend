@@ -1,34 +1,92 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Diagnosis from "../../components/Diagnosis";
+import { useLocation } from "react-router-dom";
+import { axiosInstance } from "../../config";
 
-export default function DoctorPatientDetails() {
+export default function DoctorPatientDetails({ token }) {
+	const [patient, setPatient] = useState([]);
+	const [diagnose, setDiagnose] = useState([]);
+	const [newDiagnose, setNewDiagnose] = useState();
+	const [isAdd, setIsAdd] = useState(false);
+	const [error, setError] = useState("");
+	const [success, setSuccess] = useState("");
+	const location = useLocation();
+	const id = location.pathname.split("=")[1];
+
+	// Get Patient Details
+	useEffect(() => {
+		const fetchPatient = async () => {
+			axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+			const res = await axiosInstance.get(`/users/patient-details/${id}`);
+			setPatient(res.data);
+		};
+		fetchPatient();
+	}, []);
+
+	// Get Diagnose Patient
+	useEffect(() => {
+		const fetchDiagnose = async () => {
+			axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+			const res = await axiosInstance.get(`/diagnose/patient/${id}`);
+			setDiagnose(res.data);
+		};
+		fetchDiagnose();
+	}, [success]);
+
+	// Post New Diagnose
+	async function handleSubmit(e) {
+		e.preventDefault();
+		setError("");
+		setSuccess("");
+
+		try {
+			axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+			const res = await axiosInstance.post("/diagnose", {
+				patientId: id,
+				diagnose: newDiagnose,
+			});
+			setIsAdd(false);
+			res && setSuccess("New diagnose has been add successfully!");
+			console.log(res);
+		} catch (err) {
+			if (err.response) {
+				setError("You failed to add new diagnose!");
+				console.log(err.response);
+			}
+		}
+	}
+
 	return (
-		<div className="doctorPatientDetails container top">
+		<div className="doctorPatientDetails container top pb-5">
 			<h1>Patient Details</h1>
 			<div className="row d-flex align-items-center">
 				<div className="col-4">
-					<img src="assets/doctor/patient-details.png" alt="" />
+					<img src="assets/patient/patient.png" alt="" className="imgPatient" />
 				</div>
-
-				<div className="col">
-					<div className="patientName fw-bold">Name - Surname</div>
-					<div className="patientGender">Male</div>
-					<div className="patientAge">34 years</div>
-					<div className="patientDetails">address</div>
-				</div>
+				{patient ? (
+					<div className="col lh-lg">
+						<div>
+							<b>Full Name</b> : {patient.firstName} {patient.lastName}
+						</div>
+						<div>
+							<b>Gender</b> : {patient.gender ? patient.gender : "-"}
+						</div>
+						<div>
+							<b>Date of Birth</b> : {patient.dateOfBirth ? patient.dateOfBirth : "-"}
+						</div>
+						<div>
+							<b>Mobile Number</b> : {patient.mobileNumber}
+						</div>
+						<div>
+							<b>Email</b> : {patient.email}
+						</div>
+					</div>
+				) : (
+					<h5 className="text-center">Loading the post...</h5>
+				)}
 			</div>
 
-			<div className="patientDiagnosis">
-				<h2>Diagnosis</h2>
-				<div className="diagnosiss d-flex justify-content-between flex-wrap">
-					<Diagnosis />
-					<Diagnosis />
-					<Diagnosis />
-				</div>
-				<div className="text-center">
-					<button className="mt-3">Add a diagnosis</button>
-				</div>
 			</div>
-		</div>
+	
 	);
 }
