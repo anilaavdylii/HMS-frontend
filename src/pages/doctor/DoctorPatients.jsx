@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function DoctorPatients() {
+export default function DoctorPatients({ patients }) {
 	return (
 		<div className="doctorPatients container top">
 			<h1>My Patients</h1>
@@ -15,30 +16,28 @@ export default function DoctorPatients() {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Patient 1</td>
-						<td>10/10/2020</td>
-						<td>
-							<button>Read all details</button>
-						</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Patient 1</td>
-						<td>10/10/2020</td>
-						<td>
-							<button>Read all details</button>
-						</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Patient 1</td>
-						<td>10/10/2020</td>
-						<td>
-							<button>Read all details</button>
-						</td>
-					</tr>
+					{patients.content ? (
+						patients.content.map((patient) => (
+							<tr key={patient.id}>
+								<td>{patient.id}</td>
+								<td>
+									{patient.firstName} {patient.lastName}
+								</td>
+								<td>{patient.lastAppointment ? patient.lastAppointment : "-"}</td>
+								<td>
+									<Link to={`/patient-details=${patient.id}`}>
+										<button>Read all details</button>
+									</Link>
+								</td>
+							</tr>
+						))
+					) : (
+						<tr>
+							<td colSpan={4} className="fw-bold text-center">
+								Loading the data...
+							</td>
+						</tr>
+					)}
 				</tbody>
 			</table>
 		</div>
