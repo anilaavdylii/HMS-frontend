@@ -41,13 +41,16 @@ export default function About() {
 				</div>
 			</div>
 
-			<div className="text-center">
+			<div className="text-center mb-3" id="map">
 				<h1>Location</h1>
-				<input type="text" placeholder="Enter your location" />
-				<button>Search</button>
+				<div>
+					<b>Address</b> : Kosove, Prishtine, Rrethi i Flamurit, dalja 1
+				</div>
+				{/* <input type="text" placeholder="Enter your location" className="rounded-3" />
+				<button className="rounded-4">Search</button> */}
 			</div>
 
-			<img src="assets/general/map.png" alt="" className="img-fluid" />
+			<img src="assets/general/hospital-map.jpg" alt="" className="img-fluid" />
 		</div>
 	);
 }
