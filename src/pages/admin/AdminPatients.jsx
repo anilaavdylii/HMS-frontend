@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 
-export default function AdminPatients() {
+export default function AdminPatients({ patients }) {
 	return (
-		<div className="AdminPatients top container">
+		<div className="AdminPatients top container-fluid admin">
 			<div className="row">
-				<div className="col-2">
+				<div className="col-2 ps-0">
 					<Sidebar />
 				</div>
 				<div className="col">
@@ -20,36 +21,28 @@ export default function AdminPatients() {
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<img src="assets/admin/admin-patient.png" alt="" /> Patient 1
-								</td>
-								<td>patient@gmail.com</td>
-								<td>10/10/2020</td>
-								<td>
-									<button className="btn-sm">Read more</button>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<img src="assets/admin/admin-patient.png" alt="" /> Patient 2
-								</td>
-								<td>patient@gmail.com</td>
-								<td>10/10/2020</td>
-								<td>
-									<button className="btn-sm">Read more</button>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<img src="assets/admin/admin-patient.png" alt="" /> Patient 3
-								</td>
-								<td>patient@gmail.com</td>
-								<td>10/10/2020</td>
-								<td>
-									<button className="btn-sm">Read more</button>
-								</td>
-							</tr>
+							{patients.content ? (
+								patients.content.map((patient) => (
+									<tr key={patient.id}>
+										<td>
+											{patient.firstName} {patient.lastName}
+										</td>
+										<td>{patient.email}</td>
+										<td>{patient.lastAppointment ? patient.lastAppointment : "-"}</td>
+										<td>
+											<Link to={`/patient-details=${patient.id}`}>
+												<button className="btn-sm">Read more</button>
+											</Link>
+										</td>
+									</tr>
+								))
+							) : (
+								<tr>
+									<td colSpan={4} className="fw-bold text-center">
+										Loading the data...
+									</td>
+								</tr>
+							)}
 						</tbody>
 					</table>
 				</div>
