@@ -1,16 +1,17 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar";
+import {posts} from "../../data";
 
 export default function AdminPosts() {
 	return (
-		<div className="AdminPosts top container">
+		<div className="AdminPosts top container-fluid">
 			<div className="row">
-				<div className="col-2">
+				<div className="col-2 ps-0">
 					<Sidebar />
 				</div>
 				<div className="col">
 					<h1>All List of Posts</h1>
-					<input type="text" placeholder="Search the title of the post..." className="form-control" />
+					{/* <input type="text" placeholder="Search the title of the post..." className="form-control" /> */}
 					<table className="table mt-5 table-hover">
 						<thead>
 							<tr className="table-secondary">
@@ -23,48 +24,30 @@ export default function AdminPosts() {
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<div className="form-check">
-										<input type="checkbox" className="form-check-input" />
-									</div>
-								</td>
-								<td>Lorem 1</td>
-								<td>Doctor 1</td>
-								<td>Ipsum 1</td>
-								<td>Hmm</td>
-								<td>
-									<i className="bi bi-check-lg icon-green"></i> <i className="bi bi-trash-fill icon-red"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div className="form-check">
-										<input type="checkbox" className="form-check-input" />
-									</div>
-								</td>
-								<td>Lorem 2</td>
-								<td>Doctor 2</td>
-								<td>Ipsum 2</td>
-								<td>Hmm</td>
-								<td>
-									<i className="bi bi-check-lg icon-green"></i> <i className="bi bi-trash-fill icon-red"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div className="form-check">
-										<input type="checkbox" className="form-check-input" />
-									</div>
-								</td>
-								<td>Lorem 3</td>
-								<td>Doctor 3</td>
-								<td>Ipsum 3</td>
-								<td>Hmm</td>
-								<td>
-									<i className="bi bi-check-lg icon-green"></i> <i className="bi bi-trash-fill icon-red"></i>
-								</td>
-							</tr>
+							{posts.content ? (
+								posts.content.map(post => (
+									<tr key={post.id}>
+										<td>
+											<div className="form-check">
+												<input type="checkbox" className="form-check-input" />
+											</div>
+										</td>
+										<td>{post.title}</td>
+										<td>{post.owner.email}</td>
+										<td>{post.category}</td>
+										<td className="textWrap">{post.description}</td>
+										<td>
+											<i className="bi bi-check-lg icon-green"></i> <i className="bi bi-trash-fill icon-red"></i>
+										</td>
+									</tr>
+								))
+							) : (
+								<tr>
+									<td colSpan={6} className="fw-bold text-center">
+										Loading the data...
+									</td>
+								</tr>
+							)}
 						</tbody>
 					</table>
 				</div>
