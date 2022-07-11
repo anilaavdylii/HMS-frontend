@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Diagnosis from "../../components/Diagnosis";
+import Diagnosis from '../../Components/Diagnosis';
 import { useLocation } from "react-router-dom";
 import { axiosInstance } from "../../config";
 

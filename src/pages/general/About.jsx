@@ -44,7 +44,7 @@ export default function About() {
 			<div className="text-center mb-3" id="map">
 				<h1>Location</h1>
 				<div>
-					<b>Address</b> : Kosove, Prishtine, Rrethi i Flamurit, dalja 1
+					<b>Address</b> : Jl. Kabupaten, Kranggahan I, Trihanggo, Kec. Gamping, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55291
 				</div>
 				{/* <input type="text" placeholder="Enter your location" className="rounded-3" />
 				<button className="rounded-4">Search</button> */}

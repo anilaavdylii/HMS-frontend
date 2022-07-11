@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../Components/Sidebar";
 import {axiosInstance} from "../../config";
 
 export default function AdminAppointments({token}) {

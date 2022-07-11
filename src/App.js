@@ -15,10 +15,10 @@ import DoctorAppointments from "./pages/doctor/DoctorAppointments";
 import DoctorPatients from "./pages/doctor/DoctorPatients";
 import DoctorPatientDetails from "./pages/doctor/DoctorPatientDetails";
 import DoctorPosts from "./pages/doctor/DoctorPosts";
-import Footer from "./components/Footer";
+import Footer from "./Components/Footer";
 import Home from "./pages/general/Home";
 import Login from "./pages/general/Login";
-import Navbar from "./components/Navbar";
+import Navbar from "./Components/Navbar";
 import NotFound from "./pages/NotFound";
 import PatientAppointment from "./pages/patient/PatientAppointment";
 import PatientDiagnosis from "./pages/patient/PatientDiagnosis";
@@ -28,7 +28,6 @@ import Register from "./pages/general/Register";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { axiosInstance } from "./config";
 import AdminSetSchedule from "./pages/admin/AdminSetSchedule";
-import { posts } from "./data";
 
 function App() {
 	const token = localStorage.getItem("jwt") && localStorage.getItem("jwt");

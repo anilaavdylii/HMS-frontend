@@ -1,8 +1,7 @@
 import React from "react";
-import Sidebar from "../../components/Sidebar";
-import {posts} from "../../data";
+import Sidebar from "../../Components/Sidebar";
 
-export default function AdminPosts() {
+export default function AdminPosts({posts}) {
 	return (
 		<div className="AdminPosts top container-fluid">
 			<div className="row">

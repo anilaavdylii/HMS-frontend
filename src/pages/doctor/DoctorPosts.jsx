@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 import {axiosInstance} from "../../config";
-import {posts} from "../../data";
 
 export default function DoctorPosts({profiles, token}) {
 	const [posts, setPosts] = useState([]);

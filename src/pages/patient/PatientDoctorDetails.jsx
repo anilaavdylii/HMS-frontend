@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Feedback from "../../components/Feedback";
+import Feedback from "../../Components/Feedback";
 import { useLocation } from "react-router-dom";
 import { axiosInstance } from "../../config";
 
