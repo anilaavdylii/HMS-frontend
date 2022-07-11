@@ -23,6 +23,27 @@ export default function PatientDoctorDetails({ token }) {
 	}, []);
 
 	
+	// Post Reviews
+	async function handleSubmit(e) {
+		e.preventDefault();
+		setError("");
+		setSuccess("");
+
+		try {
+			const res = await axiosInstance.post("/review", {
+				doctorId: id,
+				review,
+			});
+			res && setSuccess("Your feedback has been sent successfully!");
+			console.log(res);
+		} catch (err) {
+			if (err.response) {
+				setError("You failed to submit the feedback!");
+				console.log(err.response);
+			}
+		}
+	}
+
 	return (
 		<div className="PatientDoctorDetails container top">
 			<div className="row doctorDetailsHeader d-flex align-items-center">
@@ -57,7 +78,29 @@ export default function PatientDoctorDetails({ token }) {
 				</p>
 			</div>
 
-			
+			<div className="doctorDetailsFeedback">
+				<div className="row">
+					<div className="col">
+						<h2>Post a Feedback</h2>
+						<form onSubmit={handleSubmit}>
+							<input
+								type="text"
+								placeholder="Give a feedback"
+								className="form-control ms-0"
+								required
+								value={review}
+								onChange={(e) => setReview(e.target.value)}
+							/>
+							<div className="text-center">
+								<button>Send feedback</button>
+								<div className="error">{error}</div>
+								<div className="success">{success}</div>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
 		</div>
 	);
 }
