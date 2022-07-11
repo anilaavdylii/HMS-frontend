@@ -21,6 +21,7 @@ export default function Register() {
 
 		if (confirmPassword === password) {
 			try {
+				delete axiosInstance.defaults.headers.common['Authorization'];
 				await axiosInstance.post("/auth/signup", {
 					firstName,
 					lastName,
@@ -33,6 +34,7 @@ export default function Register() {
 				});
 				navigate("/login", { replace: true });
 			} catch (err) {
+				console.log(err);
 				if (err.response) {
 					setError("Your registration failed!");
 				}
