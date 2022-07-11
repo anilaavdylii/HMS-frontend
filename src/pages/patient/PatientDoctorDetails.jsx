@@ -22,7 +22,16 @@ export default function PatientDoctorDetails({ token }) {
 		fetchDoctor();
 	}, []);
 
-	
+	// Get Doctor Reviews
+	useEffect(() => {
+		const fetchReviews = async () => {
+			axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+			const res = await axiosInstance.get(`/review/${id}`);
+			setReviews(res.data);
+		};
+		fetchReviews();
+	}, [success]);
+
 	// Post Reviews
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -98,7 +107,13 @@ export default function PatientDoctorDetails({ token }) {
 							</div>
 						</form>
 					</div>
-					
+					<div className="col">
+						<h2>Latest Feedbacks</h2>
+						<Feedback reviews={reviews} />
+						<div className="text-center">
+							<button>More feedbacks...</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
