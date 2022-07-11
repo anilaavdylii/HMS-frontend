@@ -1,35 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { axiosInstance } from "../../config";
 
-export default function PatientDiagnosis() {
+export default function PatientDiagnosis({ token }) {
+	const [diagnosis, setDiagnosis] = useState("");
+
+	token &&
+		useEffect(() => {
+			const fetchDiagnosis = async () => {
+				axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+				const res = await axiosInstance.get("/diagnose");
+				setDiagnosis(res.data);
+			};
+			fetchDiagnosis();
+		}, []);
+
 	return (
 		<div className="patientDiagnosis container top">
 			<h1>My Diagnosis</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pari . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-				id est laborum.
-				<br />
-				<span className="fw-bold">- By doctor 1</span>
-			</p>
-
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pari . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-				id est laborum.
-				<br />
-				<span className="fw-bold">- By doctor 2</span>
-			</p>
-
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pari . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-				id est laborum.
-				<br />
-				<span className="fw-bold">- By doctor 3</span>
-			</p>
+			{diagnosis ? diagnosis.map((d, i) => <p key={i}>{d.diagnose}</p>) : <h5 className="text-center">Loading the data...</h5>}
 		</div>
 	);
 }
