@@ -12,6 +12,7 @@ export default function Login() {
 		setError("");
 
 		try {
+			delete axiosInstance.defaults.headers.common['Authorization'];
 			const res = await axiosInstance.post("/auth/authenticate", {
 				email,
 				password,
