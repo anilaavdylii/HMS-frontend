@@ -61,7 +61,7 @@ export default function DoctorPatientDetails({ token }) {
 			<h1>Patient Details</h1>
 			<div className="row d-flex align-items-center">
 				<div className="col-4">
-					<img src="assets/patient/patient.png" alt="" className="imgPatient" />
+				<img src={`data:image/png;base64,${patient.profilePicture}`} className="imgHeader" alt="" />
 				</div>
 				{patient ? (
 					<div className="col lh-lg">
@@ -88,7 +88,7 @@ export default function DoctorPatientDetails({ token }) {
 
 			<div className="patientDiagnosis">
 				<h2>Diagnosis</h2>
-				<div className="d-flex justify-content-between">
+				<div className="d-flex justify-content-around">
 					<Diagnosis diagnose={diagnose} />
 				</div>
 				<div className="text-center mb-5">

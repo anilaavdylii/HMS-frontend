@@ -43,7 +43,7 @@ export default function Login() {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
-						<label className="form-label fw-bold">Login as Patient/Doctor :</label>
+						<label className="form-label fw-bold">Login as Patient/Doctor/Admin :</label>
 						<select name="role" className="form-control" required value={role} onChange={(e) => setRole(e.target.value)}>
 							<option value="patient">Patient</option>
 							<option value="doctor">Doctor</option>

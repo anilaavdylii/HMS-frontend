@@ -56,16 +56,21 @@ export default function PatientDoctorDetails({ token }) {
 	return (
 		<div className="PatientDoctorDetails container top">
 			<div className="row doctorDetailsHeader d-flex align-items-center">
-				<div className="col">
-					<img src="assets/patient/doctor-details.png" alt="" className="imgHeader" />
+				<div className="col" >
+					<img src={`data:image/png;base64,${doctor.profilePicture}`} alt="" className="imgHeader" />
 				</div>
 				{doctor.firstName ? (
 					<div className="col text-center">
-						<h2>Hello, I'm</h2>
-						<h1>
-							{doctor.firstName} {doctor.lastName}
-						</h1>
-						<h3>{doctor.email}</h3>
+						<h1>Doctor Details</h1>
+				<p>
+				This is  <b>Dr. {doctor.firstName} {doctor.lastName}</b>
+				</p>
+
+				<p>
+					<h5>Contact</h5>
+				Email: <b>{doctor.email}</b><br />
+				Phone number: <b>{doctor.mobileNumber}</b>
+				</p>
 					</div>
 				) : (
 					<div className="col text-center">
@@ -74,18 +79,7 @@ export default function PatientDoctorDetails({ token }) {
 				)}
 			</div>
 
-			<div className="doctorDetailsDesc">
-				<h1>Doctor Details</h1>
-				<p>
-					"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
-					quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est
-					laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-					cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-					autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-					recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis
-					doloribus asperiores repellat."
-				</p>
-			</div>
+			<br /><br />
 
 			<div className="doctorDetailsFeedback">
 				<div className="row">

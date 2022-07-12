@@ -15,7 +15,7 @@ export default function PatientDoctors({ doctors }) {
 					<i className="bi bi-search" />
 				</div> */}
 
-				<div className="doctorsTeam d-flex justify-content-between flex-wrap">
+				<div className="doctorsTeam d-flex justify-content-center flex-wrap">
 					<Doctor doctors={doctors} />
 				</div>
 			</div>

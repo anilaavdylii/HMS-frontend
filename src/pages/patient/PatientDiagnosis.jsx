@@ -16,8 +16,11 @@ export default function PatientDiagnosis({ token }) {
 
 	return (
 		<div className="patientDiagnosis container top">
-			<h1>My Diagnosis</h1>
-			{diagnosis ? diagnosis.map((d, i) => <p key={i}>{d.diagnose}</p>) : <h5 className="text-center">Loading the data...</h5>}
+			<h2>My Diagnosis</h2>
+				<div className="patientDiagnose d-flex justify-content-around">
+				{diagnosis ? diagnosis.map((d, i) => <div className="patientDiagnose-div"><br /><p key={i}> <b>Diagnose: <br /> <br /> </b>{d.diagnose} <br /><br /></p></div>) : <h5 className="text-center">Loading the data...</h5>}
+				</div>
+				
 		</div>
 	);
 }
