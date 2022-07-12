@@ -32,7 +32,7 @@ export default function AdminPosts({posts}) {
 											</div>
 										</td>
 										<td>{post.title}</td>
-										<td>{post.owner.email}</td>
+										<td>{post.author}</td>
 										<td>{post.category}</td>
 										<td className="textWrap">{post.description}</td>
 										<td>
