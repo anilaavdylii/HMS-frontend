@@ -46,7 +46,7 @@ export default function AdminSchedules({token, doctors}) {
 						{schedules &&
 							schedules.map((schedule, i) => (
 								<div key={i} className="mb-3">
-									<b>{schedule.weekDay}</b>: {schedule.paradite && !schedule.pushim && "Morning "} {schedule.pasdite && schedule.pushim && "Evening "} {schedule.pushim && "Not available "}
+									<b>{schedule.weekDay}</b>: {schedule.paradite && "Morning "} {schedule.pasdite && "Evening "} {schedule.pushim && "Not available "}
 								</div>
 							))}
 					</div>

@@ -12,13 +12,16 @@ export default function patientAppointment({ doctors }) {
 
 	useEffect(() => {
 		async function handleDateTime() {
-			doctors.content && setDoctorId(doctors.content[0].id);
+			doctors.content && setDoctorId(doctorId) ;
 			try {
-				const res = await axiosInstance.post("/slots", {
-					doctorId,
-					date,
-				});
-				setSlots(res.data);
+				if(date) {
+					const res = await axiosInstance.post("/slots", {
+						doctorId,
+						date,
+					});
+					setSlots(res.data);
+				}
+				
 			} catch (err) {
 				if (err.response) {
 					console.log(err.response);
