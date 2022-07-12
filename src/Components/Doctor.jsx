@@ -9,9 +9,10 @@ export default function Doctor({ doctors }) {
 					<div className="doctor mt-5" key={doctor.id}>
 						<div className="d-flex gap-3">
 							<div>
-								<img src="assets/patient/image25.png" alt="" />
+								<img src={`data:image/png;base64,${doctor.profilePicture}`} className="imgHeader-doc" alt="" />
 							</div>
 							<div>
+							<br /><br />
 								<div className="doctorName">First Name : {doctor.firstName}</div>
 								<div className="doctorName">Last Name : {doctor.lastName}</div>
 								<div className="doctorEmail">Email : {doctor.email}</div>
