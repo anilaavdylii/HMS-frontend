@@ -40,17 +40,6 @@ export default function About() {
 					<p> It's 2019: time to sink or swim. </p> <p> We are your Social Media Marketing Agency.</p>
 				</div>
 			</div>
-
-			<div className="text-center mb-3" id="map">
-				<h1>Location</h1>
-				<div>
-					<b>Address</b> : Jl. Kabupaten, Kranggahan I, Trihanggo, Kec. Gamping, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55291
-				</div>
-				{/* <input type="text" placeholder="Enter your location" className="rounded-3" />
-				<button className="rounded-4">Search</button> */}
-			</div>
-
-			<img src="assets/general/hospital-map.jpg" alt="" className="img-fluid" />
 		</div>
 	);
 }

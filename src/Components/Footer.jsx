@@ -7,6 +7,9 @@ export default function Footer({ role }) {
 			<hr />
 			<div className="row d-flex justify-content-around">
 				<div className="col-3">
+				<img src="assets/general/footericon.png" alt="" className="footericon" />
+				</div>
+				<div className="col-3">
 					<h5>Hours</h5>
 					<div className="row">
 						<div className="col">

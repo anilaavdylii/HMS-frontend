@@ -27,6 +27,10 @@ button {
 button:hover {
 	opacity: 0.75;
 }
+.footericon {
+	width: 45%;
+	margin-left: 78px;
+}
 input {
 	width: 40%;
 	margin: 0px 40px 20px 0;
