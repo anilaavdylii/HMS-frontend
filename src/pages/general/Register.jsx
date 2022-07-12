@@ -25,7 +25,7 @@ export default function Register() {
 				await axiosInstance.post("/auth/signup", {
 					firstName,
 					lastName,
-					date,
+					dateOfBirth: date,
 					gender,
 					mobileNumber,
 					email,
