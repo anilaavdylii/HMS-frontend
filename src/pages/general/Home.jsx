@@ -57,10 +57,10 @@ export default function Home({ posts }) {
 						<div className="col">
 							<h1 className="text-center">About Us</h1>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-								minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							QKUK Hospital in Kosovo was founded in December 2000 as the first public hospital in the country. He started his activity in Cardiology and Cardiosurgery with the recruitment of a staff of foreign professionals with experience in this field and with the aim of serving patients in the country and abroad. <br></br> <br></br>Within one year, it reduced the flow of cardiac patients leaving Kosovo to be treated abroad by 85%.
+
+After this success, QKUK Hospital quickly expanded its activity, initially focusing on general surgery, orthopedics, eye surgery and urology until it reached the full capacity it enjoys today.
 							</p>
-							<p>Duis aute irure dolor in reprehenderit in voluptate Velit esse cillum dolore eu fugiat nulla pariatur.</p>
 							<Link to="/about">
 								<button className="mt-3">Read more</button>
 							</Link>

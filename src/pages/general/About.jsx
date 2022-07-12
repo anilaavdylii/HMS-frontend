@@ -6,11 +6,9 @@ export default function About() {
 			<h1>About Us</h1>
 			<div className="row aboutTop d-flex align-items-center mb-5">
 				<div className="col">
-					<h1>Lorem Ipsum!</h1>
+					<h1>Our Vision</h1>
 					<p>
-						Lorem Media is a full-service social media agency. We offer businesses innovative solutions that deliver the right type of audience to you
-						in the most effective strategies possible. We strive to develop a community around your business, polishing your branding, and improving
-						your public relations.
+					QKUK Hospital's vision for excellence and leadership is driven by its core values that include service, partnership, care and integrity. We work hard to provide maximum care and treat all patients with the same safety, dignity and respect.
 					</p>
 				</div>
 				<div className="col">
@@ -25,19 +23,10 @@ export default function About() {
 				<div className="col">
 					<h2>Biography</h2>
 					<p>
-						Lorem Media is a full-service social media agency. We offer businesses innovative solutions that deliver the right type of audience to you
-						in the most effective strategies possible. We strive to develop a community around your business, polishing your branding, and improving
-						your public relations. Social Media is now one of the most powerful marketing tools with the ability to communicate with a target audience
-						in real time.
+					Southeast Europe Equity Fund II (SEEF II), the investment fund that owns the QKUK Hospital, was established in March 2006 as a result of the joint financing of 200 million dollars of institutional investors from Europe and the USA, the US Government Investment Agency OPIC as well as EBRD.
 					</p>
-					<p> It's 2019: time to sink or swim. </p> <p> We are your Social Media Marketing Agency.</p>
-					<p>
-						Lorem Media is a full-service social media agency. We offer businesses innovative solutions that deliver the right type of audience to you
-						in the most effective strategies possible. We strive to develop a community around your business, polishing your branding, and improving
-						your public relations. Social Media is now one of the most powerful marketing tools with the ability to communicate with a target audience
-						in real time.
-					</p>
-					<p> It's 2019: time to sink or swim. </p> <p> We are your Social Media Marketing Agency.</p>
+					
+					<p> Providing a comprehensive service in an environment where innovation and continuous education are an integral part of care.</p> <p>To be the undisputed leader in providing services from the most immediate to the most innovative and complex ones.</p>
 				</div>
 			</div>
 		</div>
